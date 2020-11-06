@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+    <Version>2.1.0</Version>
+    <CopySNIFiles>false</CopySNIFiles>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient.SNI" Version="$(Version)" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Include="$(NuGetPackageRoot)\Microsoft.Data.SqlClient.SNI\$(Version)\buildTransitive\net46\Microsoft.Data.SqlClient.SNI.*.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="build\*">
+      <Pack>true</Pack>
+      <PackagePath>build</PackagePath>
+    </None>
+    <None Include="buildTransitive\*">
+      <Pack>true</Pack>
+      <PackagePath>buildTransitive</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
