@@ -28,6 +28,10 @@
       <Pack>true</Pack>
       <PackagePath>buildTransitive</PackagePath>
     </None>
+    <None Include="ThirdPartyNotices.txt">
+      <Pack>true</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
